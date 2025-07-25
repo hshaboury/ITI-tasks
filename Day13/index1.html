@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Simple_Calculator</title>
+<style>
+body {
+background: linear-gradient(to bottom, #ccc, #eee);
+font-family: Arial, sans-serif;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+.container {
+background: #d3b800;
+border: 2px solid black;
+border-radius: 20px;
+padding: 30px;
+display: flex;
+gap: 40px;
+box-shadow: 5px 5px 10px #333;
+}
+
+.box {
+padding: 20px;
+border-radius: 20px;
+box-shadow: inset 0 0 20px #00000055;
+}
+
+.addition {
+background: linear-gradient(to bottom right, #cc4400, #ff7744);
+}
+
+.multiplication {
+background: linear-gradient(to bottom right, #228800, #66cc33);
+}
+
+h2 {
+text-align: center;
+color: black;
+margin-bottom: 20px;
+}
+
+input[type="number"] {
+width: 60px;
+font-size: 20px;
+text-align: center;
+margin: 0 5px;
+border: 2px solid gray;
+border-radius: 5px;
+padding: 5px;
+}
+
+span {
+font-size: 24px;
+font-weight: bold;
+}
+
+.result {
+display: inline-block;
+
+width: 60px;
+text-align: center;
+font-size: 20px;
+margin-left: 5px;
+border: 2px solid gray;
+border-radius: 5px;
+background: #fff;
+padding: 5px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<div class="box addition">
+<h2>ADDITION</h2>
+<label for="add1">Add Number 1:</label>
+<input type="number" id="add1" oninput="calculateAddition()">
+<span>+</span>
+<label for="add2">Add Number 2:</label>
+<input type="number" id="add2" oninput="calculateAddition()">
+<span>=</span>
+<div class="result" id="addResult">0</div>
+</div>
+
+<div class="box multiplication">
+<h2>MULTIPLICATION</h2>
+<label for="mul1">Multiply Number 1:</label>
+<input type="number" id="mul1" oninput="calculateMultiplication()">
+<span>*</span>
+<label for="mul2">Multiply Number 2:</label>
+<input type="number" id="mul2" oninput="calculateMultiplication()">
+<span>=</span>
+<div class="result" id="mulResult">0</div>
+</div>
+
+</div>
+
+<script>
+function calculateAddition() {
+let a = parseFloat(document.getElementById("add1").value) || 0;
+let b = parseFloat(document.getElementById("add2").value) || 0;
+document.getElementById("addResult").textContent = a + b;
+}
+
+function calculateMultiplication() {
+let a = parseFloat(document.getElementById("mul1").value) || 0;
+let b = parseFloat(document.getElementById("mul2").value) || 0;
+document.getElementById("mulResult").textContent = a * b;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task2</title>
+    <style>
+      body {
+        background: #eee;
+        padding: 20px;
+        font-family: sans-serif;
+      }
+
+      .main-container {
+        display: flex;
+        border: 4px solid #aaffaa;
+        border-radius: 20px;
+        background: linear-gradient(to right, #ccffcc, #e0ffe0);
+        padding: 20px;
+        gap: 20px;
+        width: fit-content;
+        transition: transform 3s ease;
+        transform-origin: center;
+      }
+
+      .text-section {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        background: white;
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+      .column {
+        width: 150px;
+        padding: 5px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .center-column {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+      }
+
+      .red-bar {
+        width: 80px;
+        height: 10px;
+        background: red;
+      }
+
+      .image-section {
+        display: grid;
+        grid-template-columns: repeat(6, 64px);
+        gap: 8px;
+        background: white;
+        padding: 10px;
+        border-radius: 10px;
+      }
+
+    .image-section img {
+        width: 64px;
+        height: 64px;
+        object-fit: cover;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        transform-origin: center;
+        transition: all 0.5s ease;
+      }
+
+      .text-section,
+      .image-section {
+        box-shadow: inset 0 0 15px green;
+      }
+
+      .image-section img:hover {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+
+     .image-section img:active {
+        transform: scale(3);
+        z-index: 10;
+        position: relative;
+      }
+
+     .main-container:has(.image-section img:active) .text-section,
+     .main-container:has(.image-section img:active) .image-section img:not(:active) {
+        transform: scale(0.5);
+        opacity: 0.3;
+        filter: blur(2px);
+        transition: all 0.5s ease;
+      }
+     .main-container:has(.image-section img:hover) {
+        transform: skew(25deg);
+      }
+    </style>
+
+    <title>Layout</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="text-section">
+        <div class="column">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quos
+            suscipit est consectetur eaque provident, nisi, tenetur non
+            dignissimos dolor sit, aliquid saepe. Ipsum ad vel, perspiciatis
+            iusto inventore voluptatibus? Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Rerum quos suscipit est consectetur eaque
+            provident, nisi, tenetur non dignissimos dolor sit, aliquid saepe.
+            Ipsum ad vel, perspiciatis iusto inventore voluptatibus?
+            <span style="background-color: red">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+              quos suscipit est consectetur eaque provident, nisi, tenetur non
+              dignissimos dolor sit, aliquid saepe. Ipsum ad vel, perspiciatis
+              iusto inventore voluptatibus?</span
+            >
+          </p>
+        </div>
+        <div class="column center-column">
+          <p>
+            <span style="background-color: red">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+              quos suscipit est consectetur eaque provident, nisi, tenetur non
+              dignissimos dolor sit, aliquid saepe. Ipsum ad vel, perspiciatis
+              iusto inventore voluptatibus?</span
+            >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quos
+            suscipit est consectetur eaque provident, nisi, tenetur non
+            dignissimos dolor sit, aliquid saepe. Ipsum ad vel, perspiciatis
+            iusto inventore voluptatibus? Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Rerum quos suscipit est consectetur eaque
+            provident, nisi, tenetur non dignissimos dolor sit, aliquid saepe.
+            Ipsum ad vel, perspiciatis iusto inventore voluptatibus?
+          </p>
+        </div>
+        <div class="column">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quos
+            suscipit est consectetur eaque provident, nisi, tenetur non
+            dignissimos dolor sit, aliquid saepe. Ipsum ad vel, perspiciatis
+            iusto inventore voluptatibus? Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Rerum quos suscipit est consectetur eaque
+            provident, nisi, tenetur non dignissimos dolor sit, aliquid saepe.
+            Ipsum ad vel, perspiciatis iusto inventore voluptatibus? Loipsum
+            dolor sit amet consectetur adipisicing elit. Rerum quos suscipit est
+            consectetur eaque provident, nisi, tenetur non dignissimos dolor
+            sit, aliquid saepe. Ipsum ad vel, perspiciatis iusto inventore
+            voluptatibus?
+          </p>
+        </div>
+      </div>
+
+      <div class="image-section">
+        <img src="/Day11/pics/1.jpg" alt="">
+        <img src="/Day11/pics/2.jpg" alt="">
+        <img src="/Day11/pics/3.jpg" alt="">
+        <img src="/Day11/pics/4.jpg" alt="">
+        <img src="/Day11/pics/5.jpg" alt="">
+        <img src="/Day11/pics/6.jpg" alt="">
+        <img src="/Day11/pics/7.jpg" alt="">
+        <img src="/Day11/pics/8.jpg" alt="">
+        <img src="/Day11/pics/9.jpg" alt="">
+        <img src="/Day11/pics/10.jpg" alt="">
+        <img src="/Day11/pics/11.jpg" alt="">
+        <img src="/Day11/pics/12.jpg" alt="">
+        <img src="/Day11/pics/13.jpg" alt="">
+        <img src="/Day11/pics/1.jpg" alt="">
+        <img src="/Day11/pics/2.jpg" alt="">
+        <img src="/Day11/pics/3.jpg" alt="">
+        <img src="/Day11/pics/4.jpg" alt="">
+        <img src="/Day11/pics/5.jpg" alt="">
+        <img src="/Day11/pics/6.jpg" alt="">
+        <img src="/Day11/pics/7.jpg" alt="">
+        <img src="/Day11/pics/8.jpg" alt="">
+        <img src="/Day11/pics/9.jpg" alt="">
+        <img src="/Day11/pics/10.jpg" alt="">
+        <img src="/Day11/pics/11.jpg" alt="">
+        <img src="/Day11/pics/12.jpg" alt="">
+        <img src="/Day11/pics/13.jpg" alt="">
+        <img src="/Day11/pics/1.jpg" alt="">
+        <img src="/Day11/pics/2.jpg" alt="">
+        <img src="/Day11/pics/3.jpg" alt="">
+        <img src="/Day11/pics/4.jpg" alt="">
+        <img src="/Day11/pics/5.jpg" alt="">
+        <img src="/Day11/pics/6.jpg" alt="">
+        <img src="/Day11/pics/7.jpg" alt="">
+        <img src="/Day11/pics/8.jpg" alt="">
+        <img src="/Day11/pics/9.jpg" alt="">
+        <img src="/Day11/pics/10.jpg" alt="">
+
+       
+    </div>
+  </body>
+</html>

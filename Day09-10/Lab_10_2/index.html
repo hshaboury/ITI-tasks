@@ -1,0 +1,42 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <title>lab 2 task 2</title>
+    <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+    <div class="container">
+    <h2>Add Employee</h2>
+    <input id="name" placeholder="Name" />
+    <input id="age" placeholder="Age" type="number" />
+    <input id="salary" placeholder="Salary" type="number" />
+    <input id="dept" placeholder="Department" />
+    <button id="addBtn">Add</button>
+
+    <h3>Sort By:</h3>
+    <select id="sort">
+        <option value="">--Select--</option>
+        <option value="name">Name</option>
+        <option value="department">Department</option>
+    </select>
+
+    <h3>Filter Age:</h3>
+    <select id="filter">
+        <option value="">--Select--</option>
+        <option value=">50">> 50</option>
+        <option value="<=50"><= 50</option>
+    </select>
+
+    <h3>Employees:</h3>
+    <table>
+        <thead>
+        <tr><th>Name</th><th>Age</th><th>Salary</th><th>Dept</th><th>Actions</th></tr>
+        </thead>
+        <tbody id="empBody"></tbody>
+    </table>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+    </body>
+    </html>

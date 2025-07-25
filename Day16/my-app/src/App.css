@@ -1,0 +1,294 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  padding: 70px 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.wrapper {
+  background-image: url('Components/assets/bg.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.header {
+  background-color: transparent;
+}
+
+.header .container {
+  height: 60px;
+  padding: 0;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .home {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #ffc107;
+}
+
+.header ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.header ul li a{
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.692);
+  transition: color 0.2s;
+}
+
+.header ul li a:hover {
+  color: white;
+}
+
+
+.hero {
+display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 60px);
+  color: white;
+}
+
+
+.hero  h1 {
+   font-size: 3rem;
+   margin-bottom: 30px;
+ }
+
+ .hero p {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.btn {
+  padding: 15px 30px;
+  background-color: #ffc107;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #e0a800;
+}
+
+.section-header {
+  text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  font-size: .8rem;
+  color: #777;
+  font-style: italic;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+}
+
+
+.icon {
+  font-size: 3rem;
+  background-color: #ffc107;
+  color: white;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.service-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.service-description {
+  font-size: .8rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.cards {
+  display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+
+.portfolio,.team {
+  background-color: rgb(242, 243, 246);
+}
+
+.portfolio-card {
+  overflow: hidden;
+  background-color: white;
+}
+.portfolio-card .img{
+  width: 100%;
+}
+.portfolio-card .txt{
+  font-size: 1.2rem;
+  text-align: center;
+}
+.portfolio-card .title{
+  margin: 15px 0 10px;
+
+}
+.portfolio-card .category{
+  font-size: .8rem;
+    color: #666;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.team .members {
+  display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    gap: 80px;
+}
+
+.team .team-card{
+  text-align: center;
+}
+
+.team .team-card .img{
+width: 200px;
+height: 200px;
+object-fit: cover;
+border-radius: 50%;
+    border: 5px solid rgb(179, 180, 180);
+}  
+
+.team .team-card .name {
+font-size: 1.2rem;
+margin: 10px 0 5px;
+}
+
+.team .team-card .title {
+font-size: .8rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.team .team-card .icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.team .team-card .icons a{
+  color: white;
+  background-color: black;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+footer {
+  color: #6666665e;
+}
+footer .container {
+  padding-bottom: 20px;
+}
+footer .companies {
+  font-weight: bold;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+footer .bottom {
+  margin-top: 70px ;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer .bottom p{
+font-size: .8rem;
+  color: #666;
+}
+
+footer .social-icons {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer .social-icons a {
+  color: white;
+    background-color: black;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.footer .social-icons a:hover {
+  background-color: #007bff;
+}

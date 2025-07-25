@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Image Exercises</title>
+<style>
+    body{font-family:Arial, sans-serif;margin:40px;}
+    h2{margin-top:40px;}
+</style>
+</head>
+<body>
+
+<!-- 1) Five different images, two blank lines between each, each with a title -->
+<h2>1) Five different images</h2>
+
+<img src="C:\Users\hosam\OneDrive\Desktop\ITI Tasks\Day02\Lab_02\boy.jpeg" title="Picture 1" alt="Picture 1">
+<br><br>
+<img src="C:\Users\hosam\OneDrive\Pictures\enter.jpg" title="Picture 2" alt="Picture 2">
+<br><br>
+<img src="C:\Users\hosam\OneDrive\Pictures\girl.png" title="Picture 3" alt="Picture 3">
+<br><br>
+<img src="C:\Users\hosam\OneDrive\Pictures\Map.jpg" title="Picture 4" alt="Picture 4">
+<br><br>
+<img src="C:\Users\hosam\OneDrive\Pictures\Placeholder.jpg" title="Picture 5" alt="Picture 5">
+
+<!-- 2) Image with border 2, width 200, height 200 -->
+<h2>2) Image with border 2, width 200&nbsp;px, height 200&nbsp;px</h2>
+
+<img src="https://via.placeholder.com/200" width="200" height="200" border="2"
+     title="Bordered 200x200 image" alt="200 by 200 image with border">
+
+<!-- 3) Clickable image that opens a search engine in a new window -->
+<h2>3) Clickable image → opens a search engine (new window)</h2>
+
+<a href="https://www.google.com" target="_blank" rel="noopener">
+    <img src="https://via.placeholder.com/200?text=Google"
+         title="Click to open Google" alt="Google link image">
+</a>
+
+<!-- 4) Image that links to itself (opens full‑size) -->
+<h2>4) Image that links to itself</h2>
+
+<a href="https://via.placeholder.com/400" target="_blank" rel="noopener">
+    <img src="https://via.placeholder.com/200?text=View+Full"
+         title="Click to view full‑size" alt="Self‑linking image">
+</a>
+
+<!-- 5) Image map -->
+<h2>5) Image map</h2>
+<p>Click the left or right half of the image:</p>
+
+<img src="https://via.placeholder.com/400x200?text=Image+Map"
+     alt="Sample image map" usemap="#samplemap">
+
+<map name="samplemap">
+    <!-- left half -->
+    <area shape="rect" coords="0,0,200,200"
+          href="https://en.wikipedia.org/wiki/HTML"
+          target="_blank" rel="noopener" alt="Wikipedia" title="Left half → Wikipedia">
+    <!-- right half -->
+    <area shape="rect" coords="200,0,400,200"
+          href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+          target="_blank" rel="noopener" alt="MDN" title="Right half → MDN Docs">
+</map>
+
+</body>
+</html>

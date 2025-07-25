@@ -1,0 +1,374 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>task_15</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+    }
+    nav {
+      background-color: #1d1d1d;
+    }
+
+    nav .nav-link {
+    color: #ccc;
+    margin: 0 10px;
+    }
+
+    nav .nav-link:hover {
+    color: white;
+    }
+
+    header {
+    background-color: #000;
+    color: white;
+    padding: 80px 0;
+    }
+
+    header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    }
+  @media (max-width: 768px) {
+    .worked-with .d-flex {
+      gap: 40px !important;
+    }
+  }    
+
+    header p {
+    
+    letter-spacing: 2px;
+    color: #959595;
+    }
+
+    .btn-green {
+    background-color:#1fff53;
+    color: #000;
+    font-weight: bold;
+    border: none;
+    }
+
+    .icon-link {
+    color: #ccc;
+    margin-left: 15px;
+    text-decoration: none;
+    }
+
+    .icon-link:hover {
+    color: white;
+    }
+
+    .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    }
+
+    .study .p{
+        letter-spacing: 2px;
+    color: #959595;
+    }
+
+    .testimonials {
+    background-color: #000000;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 100px;
+    }
+    .testimonials .testt{
+    letter-spacing: 2px;
+    color: #959595;
+    }
+
+
+    .testimonials .card {
+    height: 100%;
+    color: #959595;
+    letter-spacing: 2px;
+    background-color: #000;
+    border: 2px solid rgb(106, 106, 106);
+    }
+
+    .recent1 .p{
+    letter-spacing: 2px;
+    color: #959595;
+    }
+
+    .recent1 .p{
+    letter-spacing: 2px;
+    color: #959595;
+    }
+
+    .recent1 .btn{
+    
+        background-color: #1fff53;
+    }
+
+    .client-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    }
+
+    .client-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    }
+
+    .client-info strong {
+    color: white;
+    }
+
+    .touch{
+
+        background-color: #000;
+    }
+
+    .touch .s{
+
+        letter-spacing: 2px;
+    color: #959595;
+    }
+
+    form {
+
+    padding: 30px;
+    border-radius: 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark py-3 px-4">
+  <div class="container">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
+      <ul class="navbar-nav d-flex flex-lg-row flex-column justify-content-center gap-4">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#case">Case Studies</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="#recent">Recent Work</a></li>
+        <li class="nav-item"><a class="nav-link" href="#get">Get in Touch</a></li>
+      </ul>
+    </div>
+
+    <div class="d-flex align-items-center ms-auto">
+      <a href="https://www.linkedin.com/in/hshaboury/" class="icon-link me-2"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="icon-link"><i class="fab fa-behance"></i></a>
+      <a href="https://x.com/_h0sam_?t=ZKJPhqFLwTiRop7V53Ik2w&s=08" class="icon-link me-2"><i class="fab fa-twitter"></i></a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Header -->  
+<header id="home">
+ <div class="container">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <h1>Hosam Mohamed </h1>
+            <p class="p">I am an Undergraduate Electronics & Communications Engineer with a passion for software development. With a strong foundation in analytical and problem-solving skills.</p>
+            <a href="#case" class="btn btn-green mt-3 btn-lg">Let's get started</a>
+        </div>
+        
+        <div class="col-md-6 text-center">
+          <img src="https://i.ibb.co/HD1BMxZb/1000073922.jpg" class="rounded-circle img-fluid" alt="Profile" style="max-width: 300px; height: auto;">
+          
+        </div>
+    </div>
+    
+    <div class="container worked-with mt-">
+        <p class="text-light small mb-5 ">Worked with</p>
+        <div class="d-flex justify-content-center align-items-center flex-wrap" style="gap: 150px;">
+            <div class="text-center">
+            <img src="https://cdn.worldvectorlogo.com/logos/clickup.svg" alt="ClickUp" style="height: 30px;">
+            <p class="mt-2 text-white-50">ClickUp</p>
+            </div>
+            <div class="text-center">
+            <img src="https://cdn.worldvectorlogo.com/logos/dropbox-2.svg" alt="Dropbox" style="height: 30px;">
+            <p class="mt-2 text-white-50">Dropbox</p>
+            </div>
+            <div class="text-center">
+            <img src="https://cdn.worldvectorlogo.com/logos/paychex.svg" alt="Paychex" style="height: 30px;">
+            <p class="mt-2 text-white-50">Paychex</p>
+            </div>
+            <div class="text-center">
+            <img src="https://cdn.worldvectorlogo.com/logos/elastic.svg" alt="Elastic" style="height: 30px;">
+            <p class="mt-2 text-white-50">Elastic</p>
+            </div>
+            <div class="text-center">
+            <img src="https://cdn.worldvectorlogo.com/logos/stripe-4.svg" alt="Stripe" style="height: 30px;">
+            <p class="mt-2 text-white-50">Stripe</p>
+            </div>
+        </div>
+    </div>
+ </div>
+</header> 
+  
+<!-- Case Studies --> 
+<section id="case" class="study section-light py-5" style="margin-top:100px">
+    <div class="container"> 
+      <h2 class="text-center mb-4 section-title">Case Studies</h2>
+      <p class=" p text-center mb-5"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum libero omnis earum quibusdam, esse, excepturi perspiciatis aliquam laborum, natus quod commodi rem sapiente a perferendis quidem quae molestias distinctio unde?</p>
+      <div class="row align-items-center mb-5">
+      <div class="col-md-6">
+      <span class="badge bg-warning ">BRAND</span>
+      <h5 class="mt-2">Work name here</h5>
+      <p class="p">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid est, saepe doloremque excepturi, atque temporibus tempora dicta quam in eaque voluptatibus deleniti delectus quisquam sint quos incidunt, perspiciatis fuga.</p>
+      <a href="#" class="btn btn-warning btn-sm">View case study →</a>
+    </div>
+    <div class="col-md-6">
+      <img src="/Day15/Pics/work-03.jpg" class="w-75" alt="">
+    </div>
+  </div>
+
+  <div class="row align-items-center mb-5">
+    <div class="col-md-6 order-md-2">
+      <span class="badge bg-primary">SERVICE</span>
+      <h5 class="mt-2">Work name here</h5>
+      <p class="p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore dolor suscipit iste labore fuga, libero rerum aliquid voluptates facere, modi, voluptate voluptatem quasi nulla. Non, tenetur. Praesentium sit vitae distinctio.</p>
+      <a href="#" class="btn btn-primary btn-sm">View case study →</a>
+    </div>
+    <div class="col-md-6 order-md-1">
+      <img src="/Day15/Pics/work-04.jpg" class="w-75" alt="">
+    </div>
+  </div>
+
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <span class="badge bg-success">MARKETING</span>
+      <h5 class="mt-2">Work name here</h5>
+      <p class="p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique aliquid autem veniam officiis nulla, reprehenderit impedit officia, odio sit quibusdam quasi unde quos repudiandae ipsa. Officia voluptate ea fuga nihil.</p>
+      <a href="#" class="btn btn-success btn-sm">View case study →</a>
+    </div>
+    <div class="col-md-6">
+      <img src="/Day15/Pics/work-07.jpg" class="w-75" alt="">
+    </div>
+  </div>
+ </div>
+</section> 
+
+<!-- Testimonials -->  
+<section id="testimonials" class="testimonials py-5">
+  <div class="container">
+    <h2 class="section-title">Testimonials</h2>
+
+    <p class="testt mb-4 text-center">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores,
+      possimus repellendus necessitatibus<br> sint voluptatem natus explicabo quae
+      voluptatibus.
+    </p>
+
+    <div class="row g-4">
+      <div class="col-12 col-md-6">
+        <div class="card p-3 border">
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia vel est omnis provident tempora, repellat voluptatem accusamus quae libero ipsa veniam minima ex natus odio facilis ducimus doloribus architecto velit!
+          </p>
+          <div class="client-info d-flex align-items-center gap-3 mt-3">
+            <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Client" style="width: 50px; border-radius: 50%;">
+            <div><strong>Client Name</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <div class="card p-3 border">
+          <p>
+           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos nihil ipsum molestiae necessitatibus! Nobis autem assumenda ducimus earum architecto harum exercitationem. Placeat blanditiis officiis provident quasi, non soluta velit quaerat?
+          </p>
+          <div class="client-info d-flex align-items-center gap-3 mt-3">
+            <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Client" style="width: 50px; border-radius: 50%;">
+            <div><strong>Client Name</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <div class="card p-3 border">
+          <p>
+           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta, officiis! Eaque nesciunt saepe eligendi, sit quas consequuntur, at libero quaerat sunt molestias repellat corporis dolorem aut nostrum voluptatibus exercitationem laboriosam.
+          </p>
+          <div class="client-info d-flex align-items-center gap-3 mt-3">
+            <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Client" style="width: 50px; border-radius: 50%;">
+            <div><strong>Client Name</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <div class="card p-3 border">
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, ullam asperiores? Rerum, laboriosam maiores ipsum repellat sit consequatur aspernatur culpa labore nobis perspiciatis quod, asperiores illum dolorem, eos qui molestiae?
+          </p>
+          <div class="client-info d-flex align-items-center gap-3 mt-3">
+            <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="Client" style="width: 50px; border-radius: 50%;">
+            <div><strong>Client Name</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Recent Work Section -->
+<section class=" recent1 py-5 bg-white text-center" id="recent">
+  <div class="container">
+    <h2 class="mb-3">Recent Work</h2>
+    <p class="p mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sed ratione ducimus, laudantium nam accusamus cumque illum ea incidunt voluptas sapiente assumenda animi atque. Sit eius et voluptatem consequatur maxime.</p>
+    <div class="row justify-content-center">
+      <div class="col-md-5 mb-4">
+        <img src="/Day15/Pics/work-03.jpg" class="w-75 rounded mb-3" alt="Work Image 1">
+        <h5>Work Name Here</h5>
+        <p class="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ipsam autem facere eius in distinctio accusantium, nobis mollitia, repudiandae reiciendis repellendus, commodi dolorem.</p>
+        <button class="btn btn-success">Know More    ></button>
+      </div>
+      <div class="col-md-5 mb-4">
+        <img src="/Day15/Pics/work-01.jpg" class="w-75 rounded mb-3" alt="Work Image 2">
+        <h5>Work Name Here</h5>
+        <p class="p"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ipsam autem facere eius in distinctio accusantium, nobis mollitia, repudiandae reiciendis repellendus, commodi dolorem.</p>
+        <button class="btn btn-success">Know More   ></button>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- Get in Touch Section -->
+<section class="touch container-fluid text-white text-center py-5" id="get">
+  <h2>Get in Touch</h2>
+  <p class="s">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique maxime ea nam unde nihil autem, voluptatem voluptatibus quia neque <br> voluptas fuga  reiciendis commodi quae veniam tempore minima eaque sint deserunt..</p>
+
+  <form class="mx-auto" style="max-width: 600px; width: 100%;">
+    <div class="mb-3 text-start">
+      <label class="form-label">Your Name</label>
+      <input type="text" class="form-control" placeholder="Enter your name">
+    </div>
+    <div class="mb-3 text-start">
+      <label class="form-label">Your Email</label>
+      <input type="email" class="form-control" placeholder="Enter your email">
+    </div>
+    <div class="mb-3 text-start">
+      <label class="form-label">Your Message</label>
+      <textarea class="form-control" rows="4" placeholder="Write your message"></textarea>
+    </div>
+    <button type="submit" class="btn btn-success btn-lg w-100" style="background-color: #1fff53;">Submit</button>
+  </form>
+</section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

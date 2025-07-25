@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Simple_VideoPlayer</title>
+<style>
+body {
+margin: 0;
+font-family: sans-serif;
+background: linear-gradient(white, orange);
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+.container {
+display: flex;
+border: 10px solid orange;
+border-radius: 20px;
+padding: 10px;
+background: white;
+box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.sidebar {
+display: flex;
+flex-direction: column;
+gap: 10px;
+margin-right: 20px;
+
+}
+
+.video-btn {
+padding: 10px;
+border: 2px solid blue;
+background-color: orange;
+cursor: pointer;
+border-radius: 8px;
+transition: transform 0.5s;
+}
+
+.video-btn:hover {
+transform: rotate(360deg);
+}
+
+.video-btn.active {
+background-color: dodgerblue;
+color: white;
+}
+
+video {
+border-radius: 20px;
+max-width: 720px;
+max-height: 480px;
+cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="sidebar">
+  <button class="video-btn active" onclick="changeVideo(this, 'https://samplelib.com/lib/preview/mp4/sample-5s.mp4')">Video1</button>
+  <button class="video-btn" onclick="changeVideo(this, 'https://media.w3.org/2010/05/sintel/trailer.mp4')">Video2</button>
+  <button class="video-btn" onclick="changeVideo(this, 'https://media.w3.org/2010/05/bunny/trailer.mp4')">Video3</button>
+  <button class="video-btn" onclick="changeVideo(this, 'https://filesamples.com/samples/video/mp4/sample_640x360.mp4')">Video4</button>
+  <button class="video-btn" onclick="changeVideo(this, 'https://media.w3.org/2010/05/video/movie_300.mp4')">Video5</button>
+  <button class="video-btn" onclick="changeVideo(this, 'https://www.w3schools.com/html/mov_bbb.mp4')">Video6</button>
+  <button class="video-btn" onclick="changeVideo(this, 'https://media.w3.org/2010/05/sintel/trailer.mp4')">Video7</button>
+  <button class="video-btn" onclick="changeVideo(this, 'https://samplelib.com/lib/preview/mp4/sample-10s.mp4')">Video8</button>
+  <button class="video-btn" onclick="changeVideo(this, 'https://media.w3.org/2010/05/bunny/trailer.mp4')">Video9</button>
+  <button class="video-btn" onclick="changeVideo(this, 'https://samplelib.com/lib/preview/mp4/sample-5s.mp4')">Video10</button>
+</div>
+
+
+<video id="videoPlayer" controls autoplay muted onclick="goFullScreen()">
+<source id="videoSource" src="universe.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<script>
+const videoPlayer = document.getElementById('videoPlayer');
+const videoSource = document.getElementById('videoSource');
+const buttons = document.querySelectorAll('.video-btn');
+
+function changeVideo(btn, filename) {
+videoSource.src = filename;
+videoPlayer.load();
+videoPlayer.play();
+
+buttons.forEach(button => button.classList.remove('active'));
+
+btn.classList.add('active');
+}
+
+function goFullScreen() {
+if (videoPlayer.requestFullscreen) {
+videoPlayer.requestFullscreen();
+} else if (videoPlayer.webkitRequestFullscreen) {
+videoPlayer.webkitRequestFullscreen();
+} else if (videoPlayer.msRequestFullscreen) {
+videoPlayer.msRequestFullscreen();
+}
+}
+
+window.onload = function () {
+videoPlayer.play();
+};
+</script>
+
+</body>
+</html>

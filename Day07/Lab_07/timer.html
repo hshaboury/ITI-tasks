@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>timer</title>
+    <script src="scripts/timer.js"></script>
+    <style>
+        body {
+            text-align: center;
+            width: 450px;
+            margin: 0 auto;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        p {
+            background-color: rgb(0, 51, 154);
+            color: white;
+            font-size: 20px;
+            padding: 5px;
+            margin: 0;
+        }
+        div:first-of-type {
+            border: 3px solid black;
+            border-radius: 20px;
+            padding: 5px;
+            margin: 10px;
+            font-size: 60px;
+            background-color: rgb(230, 233, 255);
+        }
+        section {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        button {
+            font-size: 20px;
+            padding: 15px 30px;
+            border: 3px solid black;
+            border-radius: 10px;
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>www.online-stopwatch.com</p>
+    <div id="timeDiv"></div>
+    <section>
+    <button id="b1" onclick="Pause_play()" style="background-color: rgb(0, 245, 0);">Pause</button>
+    <button onclick="Clear()" style="background-color: rgb(252, 8, 8);">Clear</button>
+    </section>
+</body>
+
+</html>

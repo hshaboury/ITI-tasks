@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imgs</title>
+    <script src="scripts/imgs.js"></script>
+    <style>
+        span {
+            text-align: center;
+            border: 1px solid green;
+            display: block;
+            padding: 5px;
+            margin: 5px;
+        }
+
+
+        div {
+            text-align: center;
+            margin: 5px;
+            padding: 5px;
+            background-color: rgb(225, 255, 255);
+            border-radius: 10px;
+            width: fit-content;
+            padding: 0 50px;
+            margin: 100px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img id="MyImg" src="images/1.jpg"
+            style="display: inline-block; text-align: center; width: 200px;height: 170px; border: 2px solid greenyellow; border-radius: 50%;" />
+        <br>
+        <button onclick="start()">start</button>
+        <button onclick="pause()">pause</button>
+        <button onclick="next()">next</button>
+        <button onclick="prev()">prev</button>
+    </div>
+</body>
+
+</html>

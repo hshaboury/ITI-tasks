@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task1</title>
+    <style>
+      @keyframes mymove {
+        0% {
+          background-color: yellow;
+          top: 0;
+          left: 0;
+        }
+        25% {
+          background-color: red;
+          top: 0;
+          left: 400px;
+        }
+        50% {
+          background-color: green;
+          top: 400px;
+          left: 400px;
+        }
+        75% {
+          background-color: blue;
+          top: 400px;
+          left: 0;
+        }
+        100% {
+          background-color: yellow;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        border: 2px solid black;
+        position: relative;
+        animation: mymove 10s infinite linear;
+        animation-play-state: paused;
+        transition: all 3s;
+      }
+
+      #start:checked ~ .container .box {
+        animation-play-state: running;
+      }
+
+      #stop:checked ~ .container .box {
+        animation-play-state: paused;
+      }
+
+      .box:hover {
+        animation-play-state: paused;
+        transform: scale(1.5);
+        border-radius: 50%;
+      }
+
+      .controls {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        display: flex;
+        gap: 20px;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        color: white;
+      }
+
+      .start {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+      }
+
+      .stop {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+      }
+
+      .container {
+        position: relative;
+        margin-top: 100px;
+        width: 500px;
+        height: 500px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <input type="radio" name="toggle" id="start" hidden />
+    <input type="radio" name="toggle" id="stop" hidden checked />
+
+    <div class="controls">
+      <label for="start" class="btn start">Start</label>
+      <label for="stop" class="btn stop">Stop</label>
+    </div>
+
+    <div class="container">
+      <section class="box"></section>
+    </div>
+  </body>
+</html>

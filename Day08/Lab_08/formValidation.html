@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Form Validation</title>
+    <style>
+        input,
+        select,
+        table,
+        textarea {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 1px solid #b7b7b7;
+            border-radius: 3px;
+            margin-left: 5px;
+            font: 16px "Times New Roman", Times, serif;
+            color: rgba(0, 142, 198, 1);
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+            text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.66);
+        }
+
+        th {
+            font: bold 19px Verdana, Geneva, sans-serif;
+            background: #fdd;
+            text-align: left;
+            width: 100px;
+        }
+
+        span {
+            font: bold 14px Verdana, Geneva, sans-serif;
+            color: red;
+        }
+
+        .Error {
+            background: #fdd;
+        }
+    </style>
+    <script>
+        function get(id) {
+            return document.forms["registration"][id];
+        }
+
+        function showError(id, message) {
+            const span = document.getElementById(id);
+            span.innerText = message;
+            span.style.display = "inline";
+        }
+
+        function hideError(id) {
+            document.getElementById(id).style.display = "none";
+        }
+
+        function checkAll() {
+            let valid = true;
+
+            // 1- Name must be required
+            const username = get("username").value.trim();
+            if (username === "") {
+                showError("uname", "UserName cannot be empty");
+                valid = false;
+            } else if (!/^[a-zA-Z0-9 ]+$/.test(username)) { // 2- Name accepts numbers and chars
+                showError("uname", "Only letters and numbers allowed");
+                valid = false;
+            } else {
+                hideError("uname");
+            }
+
+            // 3- User ID accepts only numbers, min 5, max 10
+            const userid = get("userid").value.trim();
+            if (!/^[0-9]{5,10}$/.test(userid)) {
+                showError("uid", "User ID must be 5-10 digits only");
+                valid = false;
+            } else {
+                hideError("uid");
+            }
+
+            // 4- Country must be selected
+            if (get("country").value === "Default") {
+                showError("countryVal", "Country must be selected");
+                valid = false;
+            } else {
+                hideError("countryVal");
+            }
+
+            // 5- Email must be in email format
+            const email = get("email").value.trim();
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert("Please enter a valid email address");
+                valid = false;
+            }
+
+            // 6- Password match & length & contains numbers, letters, special chars
+            const pass = get("passid").value;
+            const confirm = get("passconfirm").value;
+            if (pass !== confirm) {
+                alert("Passwords do not match");
+                valid = false;
+            } else if (!/^.*(?=.{10,20})(?=.*\d)(?=.*[a-zA-Z])(?=.*[!@#$%^&*()_+\-=]).*$/.test(pass)) {
+                alert("Password must be 10-20 characters and contain letters, numbers, and special characters");
+                valid = false;
+            }
+
+            // 7- Gender must be selected (radio)
+            const gender = document.querySelector("input[name='sex']:checked");
+            if (!gender) {
+                alert("Please select a gender");
+                valid = false;
+            }
+
+            // 8- At least two languages checked
+            const langs = document.querySelectorAll("input[name='Uint']:checked");
+            if (langs.length < 2) {
+                alert("Select at least two programming languages");
+                valid = false;
+            }
+
+            return valid;
+        }
+    </script>
+</head>
+
+<body>
+    <form name='registration' onsubmit="return checkAll();">
+        <h1>Registration Form</h1>
+        <table>
+            <tr>
+                <th><label for="username">Name:</label></th>
+                <td>
+                    <input type="text" name="username">
+                    <span id="uname" style="display:none"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <th><label for="userid">User ID:</label></th>
+                <td>
+                    <input type="text" name="userid" maxlength="10">
+                    <span id="uid" style="display:none"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <th><label for="country">Country:</label></th>
+                <td>
+                    <select name="country">
+                        <option value="Default">(Please select a country)</option>
+                        <option value="112233">Egypt</option>
+                        <option value="223344">KSA</option>
+                        <option value="334455">UAE</option>
+                        <option value="445566">Kuwait</option>
+                        <option value="556677">USA</option>
+                    </select>
+                    <span id="countryVal" style="display:none"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <th>Email:</th>
+                <td><input type="text" name="email"></td>
+            </tr>
+
+            <tr>
+                <th>Password:</th>
+                <td><input type="password" name="passid"></td>
+            </tr>
+
+            <tr>
+                <th>Confirm Password:</th>
+                <td><input type="password" name="passconfirm"></td>
+            </tr>
+
+            <tr>
+                <th>Gender:</th>
+                <td>
+                    <input type="radio" name="sex" value="Male">Male
+                    <input type="radio" name="sex" value="Female">Female
+                </td>
+            </tr>
+
+            <tr>
+                <th>Languages:</th>
+                <td>
+                    <input type="checkbox" name="Uint" value="JavaScript">JavaScript
+                    <input type="checkbox" name="Uint" value="C#">C#
+                    <input type="checkbox" name="Uint" value="SQL Server">SQL Server
+                    <input type="checkbox" name="Uint" value="ASP.Net">ASP.Net
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Simple_Gallery</title>
+<style>
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background: linear-gradient(#ddd, #999);
+}
+
+.container {
+width: 90%;
+margin: 30px auto;
+padding: 20px;
+border-radius: 20px;
+background: linear-gradient(to bottom, #f6b26b, #d9d2e9);
+box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.gallery, .drop-box {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+padding: 20px;
+margin: 15px 0;
+border-radius: 20px;
+border: 2px solid #666;
+justify-content: center;
+}
+
+.gallery {
+background: linear-gradient(to bottom, #fff2cc, #d9ead3);
+}
+
+.drop-box {
+background: linear-gradient(to bottom, #b6d7a8, #a2c4c9);
+min-height: 150px;
+}
+
+.image-item {
+border: 3px solid cyan;
+border-radius: 5px;
+overflow: hidden;
+width: 100px;
+height: 100px;
+cursor: grab;
+}
+
+.image-item img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.drag-over {
+border: 3px dashed #000;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<div class="gallery" id="gallery">
+<div class="image-item" draggable="true"><img src="/Day13/images/1.jpg" alt=""></div>
+<div class="image-item" draggable="true"><img src="/Day13/images/2.jpg" alt=""></div>
+<div class="image-item" draggable="true"><img src="/Day13/images/3.jpg" alt=""></div>
+<div class="image-item" draggable="true"><img src="/Day13/images/4.jpg" alt=""></div>
+<div class="image-item" draggable="true"><img src="/Day13/images/5.jpg" alt=""></div>
+<div class="image-item" draggable="true"><img src="/Day13/images/6.jpg" alt=""></div>
+</div>
+
+<div class="drop-box" id="dropBox">
+</div>
+</div>
+
+<script>
+const gallery = document.getElementById('gallery');
+const dropBox = document.getElementById('dropBox');
+
+gallery.addEventListener('dragstart', (e) => {
+const target = e.target.closest('.image-item');
+if (target) {
+e.dataTransfer.setData('text/plain', '');
+target.classList.add('dragging');
+}
+});
+
+gallery.addEventListener('dragend', (e) => {
+const target = e.target.closest('.image-item');
+if (target) {
+target.classList.remove('dragging');
+
+}
+});
+
+dropBox.addEventListener('dragover', (e) => {
+e.preventDefault();
+dropBox.classList.add('drag-over');
+});
+
+dropBox.addEventListener('dragleave', () => {
+dropBox.classList.remove('drag-over');
+});
+
+dropBox.addEventListener('drop', (e) => {
+e.preventDefault();
+dropBox.classList.remove('drag-over');
+
+const draggingItem = document.querySelector('.gallery .dragging');
+if (draggingItem) {
+const clone = draggingItem.cloneNode(true);
+clone.setAttribute('draggable', 'false');
+clone.classList.remove('dragging');
+dropBox.appendChild(clone);
+
+gallery.removeChild(draggingItem);
+}
+});
+</script>
+
+</body>
+</html>

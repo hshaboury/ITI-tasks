@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task2</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: #fafbfc;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+    }
+
+    .sidebar { /* ... */ }
+    .logo img { max-width: 100%; }
+
+    .side-nav ul { list-style: none; padding: 0; margin: 0 0 24px 0; }
+    .side-nav li { margin-bottom: 10px; }
+    .side-nav a { text-decoration: none; color: #23272b44; font-weight: 500; font-size: 1.08em; }
+    .side-nav .active a, .side-nav a:hover { color: #000000; }
+
+    .side-social { margin-bottom: 24px; display: flex; gap: 8px; }
+    .side-social img { width: 24px; height: 24px; }
+
+    .side-widget p, .side-widget h4 { font-size: 0.98em; margin: 0 0 8px 0; color: #888; }
+
+    .flickr-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+    }
+
+    .flickr-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 3px;
+    }
+
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .topbar {
+      background: #c7b07b;
+      padding: 0;
+    }
+
+    .main-nav {
+      display: flex;
+    }
+
+    .main-nav label {
+      display: block;
+      padding: 14px 16px;
+      color: #fff;
+      font-weight: 500;
+      font-size: 1.05em;
+      cursor: pointer;
+    }
+
+    .main-nav label:hover {
+      color: #23272b;
+    }
+
+    input[name="filter"] {
+      display: none;
+    }
+
+    input#all:checked ~ section .portfolio-item,
+    input#illustration:checked ~ section .portfolio-item.illustration,
+    input#motion:checked ~ section .portfolio-item.motion,
+    input#photography:checked ~ section .portfolio-item.photography,
+    input#print:checked ~ section .portfolio-item.print {
+      display: block;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto;
+      gap: 0;
+      flex: 1;
+    }
+
+    .portfolio-item {
+      min-height: 180px;
+      display: none;
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 1200px) {
+      .portfolio-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 900px) {
+      .container { grid-template-columns: 1fr; }
+      .sidebar { flex-direction: row; justify-content: space-between; padding: 16px; border-bottom: 1px solid #e0e0e0; }
+    }
+
+    @media (max-width: 700px) {
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 500px) {
+      .portfolio-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="images/ink.png" alt="">
+      </div>
+      <nav class="side-nav">
+        <ul>
+          <li class="active"><a href="#">Portfolio</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Buy This Theme</a></li>
+        </ul>
+      </nav>
+      <div class="side-social">
+        <a href="https://www.facebook.com/hosam.shaboury.2025" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" /></a>
+        <a href="https://www.instagram.com/_h0sam_" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a>
+        <a href="https://www.youtube.com/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube" /></a>
+      </div>
+      <div class="side-widget"><h4>A Text Widget</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+      <div class="side-flickr">
+        <h4>Flickr</h4>
+        <div class="flickr-grid">
+          <div class="flickr-img"><img src="images/1.jpg" alt=""></div>
+          <div class="flickr-img"><img src="images/2.jpg" alt=""></div>
+          <div class="flickr-img"><img src="images/3.jpg" alt=""></div>
+          <div class="flickr-img"><img src="images/4.jpg" alt=""></div>
+          <div class="flickr-img"><img src="images/p6.jpg" alt=""></div>
+          <div class="flickr-img"><img src="images/laptop_top.jpg" alt=""></div>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <input type="radio" name="filter" id="all" checked>
+      <input type="radio" name="filter" id="illustration">
+      <input type="radio" name="filter" id="motion">
+      <input type="radio" name="filter" id="photography">
+      <input type="radio" name="filter" id="print">
+
+      <header class="topbar">
+        <nav class="main-nav">
+          <label for="all">All</label>
+          <label for="illustration">Illustration</label>
+          <label for="motion">Motion</label>
+          <label for="photography">Photography</label>
+          <label for="print">Print</label>
+        </nav>
+      </header>
+
+      <section class="portfolio-grid">
+        <div class="portfolio-item illustration"><img src="images/1.jpg" alt=""></div>
+        <div class="portfolio-item illustration"><img src="images/2.jpg" alt=""></div>
+        <div class="portfolio-item motion"><img src="images/3.jpg" alt=""></div>
+        <div class="portfolio-item motion"><img src="images/4.jpg" alt=""></div>
+        <div class="portfolio-item photography"><img src="images/5.jpg" alt=""></div>
+        <div class="portfolio-item photography"><img src="images/laptop_top.jpg" alt=""></div>
+        <div class="portfolio-item print"><img src="images/p3.jpg" alt=""></div>
+        <div class="portfolio-item print"><img src="images/p4.jpg" alt=""></div>
+        <div class="portfolio-item illustration"><img src="images/p5.jpg" alt=""></div>
+        <div class="portfolio-item motion"><img src="images/p6.jpg" alt=""></div>
+        <div class="portfolio-item photography"><img src="images/pexels-christina-morillo-1181210.jpg" alt=""></div>
+        <div class="portfolio-item print"><img src="images/team-3-800x800.jpg" alt=""></div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task2</title>
+  <script src="styleScript.js"></script>
+</head>
+<body>
+  <p id="d" style="font-family:Verdana;font-size:12px;text-align:left">
+    This is the Div tag that contains the paragraph body<br />
+    thank you very much :)
+  </p>
+
+  <br />
+  <table border="5">
+    <tr>
+      <td>
+        <b>Font Style</b><br />
+        <input type="radio" name="Style" onclick="ChangeStyle('Arial')" />Arial<br />
+        <input type="radio" name="Style" onclick="ChangeStyle('Verdana')" checked />Verdana<br />
+        <input type="radio" name="Style" onclick="ChangeStyle('Monotype Corsiva')" />Monotype Corsiva<br />
+        <input type="radio" name="Style" onclick="ChangeStyle('Algerian')" />Algerian<br />
+      </td>
+
+      <td>
+        <b>Font Size</b><br />
+        <input type="radio" name="Size" onclick="ChangeSize('12px')" checked />12px<br />
+        <input type="radio" name="Size" onclick="ChangeSize('16px')" />16px<br />
+        <input type="radio" name="Size" onclick="ChangeSize('18px')" />18px<br />
+        <input type="radio" name="Size" onclick="ChangeSize('20px')" />20px<br />
+      </td>
+
+      <td>
+        <b>Background Color</b><br />
+        <input type="radio" name="bg" onclick="Changbackground('red')" />Red<br />
+        <input type="radio" name="bg" onclick="Changbackground('yellow')" checked />Yellow<br />
+        <input type="radio" name="bg" onclick="Changbackground('black')" />Black<br />
+      </td>
+
+      <td>
+        <b>Alignment</b><br />
+        <input type="radio" name="align" onclick="Changa('left')" checked />Left<br />
+        <input type="radio" name="align" onclick="Changa('center')" />Center<br />
+        <input type="radio" name="align" onclick="Changa('right')" />Right<br />
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        body {
+            padding: 10px;
+            font-weight: bold;
+        }
+        input[type="submit"] {
+            margin-left: 150px;
+        }
+    </style>
+</head>
+<body>
+    <form action="server.html" method="get">
+        <label for="name">Enter your name: </label>
+        <input type="text" id="name" name="name">
+        <br><br>
+        <label for="age">Enter your age: </label>
+        <input type="text" id="age" name="age">
+        
+        <br><br>
+        <label for="gender">Select your Gender: </label>
+        <br><br>
+        <input type="radio" name="gender" value="male">
+        <img src="images/male.png" alt="male">
+        <input type="radio" name="gender" value="female">
+        <img src="images/female.png" alt="female">
+        <br><br>
+        
+        <label for="color">Select your favorite color: </label>
+        <select id="color" name="color">
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+        </select>
+        <br><br>
+        <input type="submit" value="register">
+    </form>
+</body>
+</html>
