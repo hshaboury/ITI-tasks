@@ -1,0 +1,16 @@
+.watchlist {
+  padding: 20px 30px;
+}
+.movies-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.movie-card img {
+  width: 150px;
+  border-radius: 8px;
+}
+.movie-card h3 {
+  font-size: 14px;
+  text-align: center;
+}

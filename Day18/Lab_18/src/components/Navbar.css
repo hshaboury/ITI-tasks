@@ -1,0 +1,36 @@
+.navbar {
+  background-color: #ad64de;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+.navbar .links a {
+  margin-left: 40px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+.navbar .links a:hover {
+  text-decoration: underline;
+  color: #681bd4;
+}
+.navbar .language-selector {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+.navbar .language-selector select {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #333;
+}
